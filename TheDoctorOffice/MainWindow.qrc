@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="MainWindow">
+    <file>Desktop - 1.png</file>
+    <file>usercolor.jpg</file>
+    <file>Final.png</file>
+  </qresource>
+</RCC>

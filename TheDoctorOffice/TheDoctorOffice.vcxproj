@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FBDC9A37-35AE-4C25-B3C0-C5F29DF327F7}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\boost_1_72_0;C:\Program Files\MySQL\Connector C++ 8.0\include\jdbc;C:\Program Files\MySQL\MySQL Server 8.0\include;C:\Program Files\MySQL\Connector C++ 8.0\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\Connector C++ 8.0\lib64;C:\Program Files\MySQL\MySQL Server 8.0\lib;C:\Program Files\MySQL\Connector C++ 8.0\lib64\vs14;C:\Users\hakee\Desktop\QTdll;C:\QT\5.14.2\msvc2017_64\lib;C:\mysql-connector-c-6.1.11-winx64\lib;C:\mysql-8.0.21-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmysql.lib;mysqlclient.lib;mysqlcppconn.lib;Qt5Sqld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\boost_1_72_0;C:\Program Files\MySQL\Connector C++ 8.0\include\jdbc;C:\Program Files\MySQL\MySQL Server 8.0\include;C:\Program Files\MySQL\Connector C++ 8.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\MySQL\Connector C++ 8.0\lib64;C:\Program Files\MySQL\MySQL Server 8.0\lib;C:\Program Files\MySQL\Connector C++ 8.0\lib64\vs14;C:\Users\hakee\Desktop\QTdll;C:\QT\5.14.2\msvc2017_64\lib;C:\mysql-connector-c-6.1.11-winx64\lib;C:\mysql-8.0.21-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlclient.lib;libmysql.lib;mysqlcppconn.lib;Qt5Sql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>Qt5.14.2</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>Qt5.14.2</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UsePrecompiledHeader>Use</UsePrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <QtMoc>
+      <PrependInclude>stdafx.h;%(PrependInclude)</PrependInclude>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UsePrecompiledHeader>Use</UsePrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <QtMoc>
+      <PrependInclude>stdafx.h;%(PrependInclude)</PrependInclude>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Doctor.cpp" />
+    <ClCompile Include="DoctorDialog.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="EmployeeDialog.cpp" />
+    <ClCompile Include="FindDoctorDialog.cpp" />
+    <ClCompile Include="FindEmployeeDialog.cpp" />
+    <ClCompile Include="FindPatietnDialog.cpp" />
+    <ClCompile Include="Janitor.cpp" />
+    <ClCompile Include="Nurse.cpp" />
+    <ClCompile Include="Patient.cpp" />
+    <ClCompile Include="PatientDialog.cpp" />
+    <ClCompile Include="Receptionist.cpp" />
+    <ClCompile Include="ReferralPatient.cpp" />
+    <ClCompile Include="RemoveDocDialog.cpp" />
+    <ClCompile Include="RemoveEmpDialog.cpp" />
+    <ClCompile Include="RemovePatientDialog.cpp" />
+    <ClCompile Include="SurgicalPatient.cpp" />
+    <ClCompile Include="UpdateEmpAddress.cpp" />
+    <ClCompile Include="UpdateEmpAge.cpp" />
+    <ClCompile Include="UpdateEmployeeDialog.cpp" />
+    <ClCompile Include="UpdateEmpPhoneNumDialog.cpp" />
+    <ClCompile Include="UpdateLNClass.cpp" />
+    <ClCompile Include="UpdatePatientDialog.cpp" />
+    <ClCompile Include="User.cpp" />
+    <QtMoc Include="UpdatePatientDialog.h" />
+    <QtMoc Include="UpdateEmpAge.h" />
+    <QtMoc Include="UpdateEmpAddress.h" />
+    <QtMoc Include="UpdateEmpPhoneNumDialog.h" />
+    <QtMoc Include="UpdateLNClass.h" />
+    <QtMoc Include="UpdateEmployeeDialog.h" />
+    <QtMoc Include="SurgicalPatient.h" />
+    <QtMoc Include="User.h" />
+    <QtRcc Include="MainWindow.qrc" />
+    <QtUic Include="DoctorDialog.ui" />
+    <QtUic Include="EmployeeDialog.ui" />
+    <QtUic Include="FindDoctorDialog.ui" />
+    <QtUic Include="FindEmployeeDialog.ui" />
+    <QtUic Include="FindPatietnDialog.ui" />
+    <QtUic Include="LoginDialog.ui" />
+    <QtUic Include="MainWindow.ui" />
+    <QtMoc Include="MainWindow.h" />
+    <ClCompile Include="LoginDialog.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="main.cpp" />
+    <QtMoc Include="LoginDialog.h" />
+    <QtMoc Include="RegisterDialog.h" />
+    <QtMoc Include="MysqlDataBase.h" />
+    <QtMoc Include="Employee.h" />
+    <QtMoc Include="Doctor.h" />
+    <QtMoc Include="Janitor.h" />
+    <QtMoc Include="Nurse.h" />
+    <QtMoc Include="Patient.h" />
+    <QtMoc Include="Receptionist.h" />
+    <QtMoc Include="ReferralPatient.h" />
+    <QtMoc Include="EmployeeDialog.h" />
+    <QtMoc Include="PatientDialog.h" />
+    <QtMoc Include="DoctorDialog.h" />
+    <QtMoc Include="FindEmployeeDialog.h" />
+    <QtMoc Include="FindPatietnDialog.h" />
+    <QtMoc Include="FindDoctorDialog.h" />
+    <QtMoc Include="RemoveEmpDialog.h" />
+    <QtMoc Include="RemovePatientDialog.h" />
+    <QtMoc Include="RemoveDocDialog.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClCompile Include="MysqlDataBase.cpp" />
+    <ClCompile Include="RegisterDialog.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <QtUic Include="PatientDialog.ui" />
+    <QtUic Include="RegisterDialog.ui" />
+    <QtUic Include="RemoveDocDialog.ui" />
+    <QtUic Include="RemoveEmpDialog.ui" />
+    <QtUic Include="RemovePatientDialog.ui" />
+    <QtUic Include="UpdateEmpAddress.ui" />
+    <QtUic Include="UpdateEmpAge.ui" />
+    <QtUic Include="UpdateEmployeeDialog.ui" />
+    <QtUic Include="UpdateEmpPhoneNumDialog.ui" />
+    <QtUic Include="UpdateLNClass.ui" />
+    <QtUic Include="UpdatePatientDialog.ui" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

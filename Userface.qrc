@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="UserIcon">
+    <file>150-1503941_user-windows-10-user-icon-png-transparent-png.png</file>
+    <file>usercolor.jpg</file>
+  </qresource>
+</RCC>
