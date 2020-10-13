@@ -908,7 +908,7 @@ void MainWindow::on_actionAddEmployee_triggered()
 
     if (EMPTY_FIELD == result)
     {
-        msgBox.warning(this, tr("WARINIG!!!"),
+        msgBox.warning(this, tr("Warning!"),
             tr("PLEASE FILL IN THE EMPTY FIELDS."));
     }// end fucntion
     else
